@@ -1,4 +1,4 @@
- *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --navy:   #1a3a7c;
@@ -25,14 +25,11 @@
       box-shadow: 0 2px 16px rgba(0,0,0,.25);
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    /*.nav-logo-icon {
+    .nav-logo-icon {
       width: 40px; height: 40px; border: 2.5px solid var(--gold);
       border-radius: 8px; display: flex; align-items: center; justify-content: center;
       font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 20px;
-      color: yellow; background: transparent; letter-spacing: -2px;
-    }*/
-    #logo{
-      height: 40px; width: 40px;
+      color: var(--gold); background: transparent; letter-spacing: -2px;
     }
     .nav-logo-text { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 16px; color: var(--white); }
     .nav-logo-text span { color: var(--gold); }
@@ -294,7 +291,39 @@
     footer p { font-size: 13px; color: rgba(255,255,255,.45); }
     footer a { color: var(--gold); text-decoration: none; font-size: 13px; }
 
-/* ─── RESPONSIVE ─── */
+    /* ─── MOBILE MENU DROPDOWN ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: var(--navy);
+      flex-direction: column;
+      padding: 16px 0 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,.85); text-decoration: none;
+      font-size: 16px; font-weight: 500;
+      padding: 14px 6vw;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: background .15s, color .15s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover, .mobile-menu a:active { background: rgba(255,255,255,.06); color: var(--gold); }
+    .mobile-menu .mobile-cta {
+      margin: 16px 6vw 0;
+      background: var(--gold); color: var(--navy);
+      text-align: center; border-radius: 8px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      padding: 14px; border-bottom: none;
+    }
+    .mobile-menu .mobile-cta:hover { background: var(--gold-lt); color: var(--navy); }
+    /* Hamburger animado */
+    .nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding-top: 110px; min-height: auto; }

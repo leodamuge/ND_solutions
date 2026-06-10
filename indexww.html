@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-          <!-- Google tag (gtag.js) -->
+         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8L1JPSRJP1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,6 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ND Solutions – Impulsionamos a sua carreira e o seu negócio</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
@@ -22,7 +23,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-icon">ND</div>
+    <div class="nav-logo-icon"><img src="assets/logo.png" alt="" id="logo"></div>
     <div class="nav-logo-text">ND <span>SOLUTIONS</span></div>
   </a>
   <ul class="nav-links">
@@ -37,14 +38,7 @@
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#servicos" onclick="fecharMenu()">Serviços</a>
-  <a href="#apoio" onclick="fecharMenu()">Apoio Académico</a>
-  <a href="#design" onclick="fecharMenu()">Design</a>
-  <a href="#contacto" onclick="fecharMenu()">Contacto</a>
-  <a href="#contacto" class="mobile-cta" onclick="fecharMenu()">Fale Connosco</a>
-</div>
+<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-content">
     <div class="hero-eyebrow">📍 Rua do Grande Maputo, ao lado da UJC</div>
@@ -283,16 +277,10 @@
 
 <script>
   function toggleMenu(btn) {
-    const menu = document.getElementById('mobileMenu');
-    btn.classList.toggle('active');
-    menu.classList.toggle('open');
-  }
-
-  function fecharMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const btn = document.querySelector('.nav-hamburger');
-    menu.classList.remove('open');
-    if (btn) btn.classList.remove('active');
+    // simple mobile toggle – could be expanded
+    const links = document.querySelector('.nav-links');
+    const cta = document.querySelector('.nav-cta');
+    if (links) links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
   }
 
   function enviarMensagem() {
@@ -315,6 +303,17 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
+</script>
+
+<script>
+  
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
 </script>
 
 </body>
