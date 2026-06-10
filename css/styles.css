@@ -295,152 +295,69 @@
     footer a { color: var(--gold); text-decoration: none; font-size: 13px; }
 
 /* ─── RESPONSIVE ─── */
+/* ─── MENU MOBILE ─── */
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 110px;
-    min-height: auto;
+
+  nav {
+    padding: 0 20px;
   }
 
-  .hero-visual {
-    align-items: flex-start;
-  }
-
-  .services-grid,
-  .apoio-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .design-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .nav-links,
-  .nav-cta {
-    display: none;
+  .nav-logo-text {
+    font-size: 14px;
   }
 
   .nav-hamburger {
-    display: block;
-  }
-}
-
-@media (max-width: 540px) {
-  .design-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-stat-row {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    z-index: 1001;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ─── CELULAR EM MODO VERTICAL ─── */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-
-  .hero {
-    padding: 120px 20px 40px;
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .hero-actions a,
-  .hero-actions button {
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: -100%;
     width: 100%;
-  }
+    height: calc(100vh - 64px);
 
-  .hero-visual img {
-    max-width: 100%;
-    height: auto;
-  }
+    background: var(--navy);
 
-  .hero-stat-row {
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+
+    gap: 25px;
+    padding-top: 40px;
+
+    transition: left 0.3s ease;
   }
 
-  .services-grid,
-  .apoio-grid,
-  .design-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .nav-links.active {
+    left: 0;
   }
 
-  section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-/* ─── iPhone X / XS / 11 Pro (Vertical) ─── */
-@media screen
-  and (max-width: 375px)
-  and (min-height: 812px)
-  and (orientation: portrait) {
-
-  .hero {
-    padding: 100px 15px 30px;
+  .nav-links li {
+    width: 90%;
     text-align: center;
   }
 
-  .hero-content h1 {
-    font-size: 1.8rem;
-    line-height: 1.2;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero-actions a,
-  .hero-actions button {
+  .nav-links a {
+    display: block;
     width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
   }
 
-  .hero-stat-row {
-    flex-direction: column;
-    gap: 12px;
+  .nav-links a:hover {
+    background: rgba(255,255,255,.08);
   }
 
-  .services-grid,
-  .apoio-grid,
-  .design-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-visual img {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .container,
-  section {
-    padding-left: 15px;
-    padding-right: 15px;
+  .nav-cta {
+    display: block;
+    margin-top: 15px;
+    width: 90%;
+    text-align: center;
   }
 }
