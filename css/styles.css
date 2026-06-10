@@ -294,19 +294,98 @@
     footer p { font-size: 13px; color: rgba(255,255,255,.45); }
     footer a { color: var(--gold); text-decoration: none; font-size: 13px; }
 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 110px; min-height: auto; }
-      .hero-visual { align-items: flex-start; }
-      .services-grid { grid-template-columns: 1fr; }
-      .apoio-grid { grid-template-columns: 1fr; }
-      .design-grid { grid-template-columns: 1fr 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: block; }
-    }
-    @media (max-width: 540px) {
-      .design-grid { grid-template-columns: 1fr; }
-      .hero-stat-row { flex-direction: column; }
-      .form-row { grid-template-columns: 1fr; }
-    }
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 110px;
+    min-height: auto;
+  }
+
+  .hero-visual {
+    align-items: flex-start;
+  }
+
+  .services-grid,
+  .apoio-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .design-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 540px) {
+  .design-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stat-row {
+    flex-direction: column;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── CELULAR EM MODO VERTICAL ─── */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+
+  .hero {
+    padding: 120px 20px 40px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions a,
+  .hero-actions button {
+    width: 100%;
+  }
+
+  .hero-visual img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-stat-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-grid,
+  .apoio-grid,
+  .design-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
